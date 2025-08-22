@@ -7,7 +7,7 @@ import csv
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import figure
 from datetime import datetime
-from Analysis import Analysis
+from DUMP.Analysis import Analysis
 import pandas as pd
 from itertools import combinations
 from multiprocessing import Pool
@@ -38,9 +38,11 @@ dataColumns = list(starData.columns)
 parallaxMask = starData['PARALLAX'] > 0.2
 alphaFeMask = starData['ALPHA_FE'] < 0.2
 
-from TESTING import allScatters, allHistograms, allLoss, allAltHistograms
+from DUMP.TESTING import allScatters, allHistograms, allLoss, allAltHistograms
 
+######################
 ##### WRITE HERE #####
+######################
 
 # allScatters()
 # allHistograms()
@@ -48,7 +50,7 @@ from TESTING import allScatters, allHistograms, allLoss, allAltHistograms
 # allHex()
 # allAltHistograms()
 
-from TESTING import createCleanUpPlots, returnPI
+from DUMP.TESTING import createCleanUpPlots, returnPI
 from OTHER.mcmc_2 import MCMC_ANALYSIS
 
 cleanUpMask = createCleanUpPlots(
@@ -85,17 +87,10 @@ Path(f"OUTPUT\\Recon-{reconVar}\\Edges").mkdir(parents=True, exist_ok=True)
 # np.save(f'OUTPUT\\Recon-{reconVar}\\ll.npy', ll)
 # np.save(f'OUTPUT\\Recon-{reconVar}\\binCentres.npy', binCentres)
 # np.save(f'OUTPUT\\Recon-{reconVar}\\media_pdf.npy', PDF)
-'''
-Samples: 250 x 10. 
-ll: 250 ; seems to be the likelihood of each scenario
-The graph point is plotted using the median value for bin_mass, and error bars are selected using percentiles.
-'''
-
 # exit()
 
-'''
 from OTHER.edgeDetection import find_edge_debug as edge
-openVar = f'Recon-D'
+openVar = f'Recon-F'
 
 ll = np.load(f'OUTPUT\\{openVar}\\ll.npy')
 ys = np.load(f'OUTPUT\\{openVar}\\binMass.npy')
@@ -154,4 +149,3 @@ plt.ylabel('Frequency')
 plt.savefig(f'OUTPUT\\Recon-{reconVar}\\tu.png')
 
 
-'''

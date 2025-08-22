@@ -1,5 +1,5 @@
 /OUTPUT/*
-/DUMP/*
+# /DUMP/*
 archive.py
 *.xlsx
 *.db

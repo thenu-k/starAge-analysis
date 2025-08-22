@@ -1,0 +1,6 @@
+/OUTPUT/*
+/DUMP/*
+archive.py
+*.xlsx
+*.db
+allData.csv

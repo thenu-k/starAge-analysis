@@ -1,0 +1,12 @@
+{
+  "name": "star-ages",
+  "version": "1.0.0",
+  "description": "A dataset shows that some stars have ages that are older than the age of the universe. This code explores what went wrong. ",
+  "main": "main.py",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "main": "python main.py"
+  },
+  "author": "Thenu Kaluarachchi",
+  "license": "ISC"
+}
